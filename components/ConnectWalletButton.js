@@ -53,7 +53,12 @@ export default function ConnectWallet() {
       let bankArray = [];
       lcd.bank.balance(connectedWallet.walletAddress).then(([coins]) => {
         coins.map((coin) => {
-          let coinValue = ("" + coin.amount.d[0] + coin.amount.d[1]) / 1000000;
+          let coinValue = 0;
+          if (coin.amount.d.length > 1) {
+            coinValue = ("" + coin.amount.d[0] + coin.amount.d[1]) / 1000000;
+          } else if (coin.amount.d.length === 1) {
+            coinValue = ("" + coin.amount.d[0]) / 1000000;
+          }
           let coinName = coin.denom.slice(1).toUpperCase();
           let coinDetails = {
             coinName,
