@@ -1,0 +1,18 @@
+{
+  "localterra": {
+    "bedrock": {
+      "codeId": "2",
+      "contractAddresses": {
+        "default": "terra10pyejy66429refv3g35g2t7am0was7ya7kz2a4"
+      }
+    }
+  },
+  "testnet": {
+    "bedrock": {
+      "codeId": "195",
+      "contractAddresses": {
+        "default": "terra1h3w0t53vnflf75s2jj4sl20yljcdt6pkugwuhleuprtru6sx6gwqcx8awq"
+      }
+    }
+  }
+}
