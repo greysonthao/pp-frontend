@@ -113,8 +113,6 @@ export default function ConnectWallet() {
     </Box>
   ));
 
-  console.log("banktable:", bankTable);
-
   return (
     <Box>
       <Box

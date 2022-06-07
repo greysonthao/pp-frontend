@@ -230,8 +230,6 @@ export default function MintBox() {
   console.log("current NFT token ID: ", currentNftData.token_id);
   console.log("current NFT token uri: ", currentNftData.token_uri); */
 
-  console.log("matches: ", matches);
-
   return (
     <Box>
       <Grid container>
