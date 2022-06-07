@@ -32,11 +32,15 @@ const Home: NextPage = () => {
           <BigMintPageButton />
         </Box>
       </Container>
-      <Box padding=".1rem 0 .1rem 0" sx={{ backgroundColor: "#222da0" }}>
+      {/* <Box padding=".1rem 0 .1rem 0" sx={{ backgroundColor: "#222da0" }}>
         <Carousel />
+      </Box> */}
+      <Box padding=".1rem 0 .1rem 0" sx={{ backgroundColor: "#222da0" }}>
+        <Container maxWidth="lg">
+          <AboutUs />
+        </Container>
       </Box>
       <Container maxWidth="lg">
-        <AboutUs />
         <FAQ />
         <Box display="flex" justifyContent="center" marginBottom="6rem">
           <BigMintPageButton />

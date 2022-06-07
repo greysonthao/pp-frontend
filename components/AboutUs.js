@@ -22,6 +22,7 @@ export default function AboutUs() {
         fontWeight="bold"
         paddingBottom="2rem"
         fontFamily="'Chewy', cursive"
+        color="white"
       >
         The Team
       </Typography>

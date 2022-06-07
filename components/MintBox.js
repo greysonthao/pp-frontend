@@ -16,8 +16,10 @@ import * as execute from "../src/contract/execute";
 import CircularProgress from "../components/CircularProgress";
 import Alert from "../components/Alert";
 import LinearProgress from "../components/LinearProgress";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function MintBox() {
+  const matches = useMediaQuery("(max-width:600px)");
   const [amount, setAmount] = React.useState(1);
   const [contractAddr, setContractAddr] = React.useState("");
   const [contractInfo, setContractInfo] = React.useState(null);
@@ -228,13 +230,27 @@ export default function MintBox() {
   console.log("current NFT token ID: ", currentNftData.token_id);
   console.log("current NFT token uri: ", currentNftData.token_uri); */
 
+  console.log("matches: ", matches);
+
   return (
     <Box>
       <Grid container>
         <Grid item xs={0} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
           <Box margin="1rem 0 0 0">
-            <Paper elevation={20} sx={{ borderRadius: "18px" }}>
+            <Paper
+              elevation={20}
+              /* sx={{ borderRadius: "8px", backgroundColor: "#442cb4" }} */
+              sx={{
+                borderRadius: "8px",
+                /* background:
+                  "linear-gradient(174deg, rgba(68,44,180,1) 0%, rgba(102,88,168,1) 50%, rgba(255,255,255,1) 100%)", */
+                /* background:
+                  "linear-gradient(90deg, rgba(136,60,204,1) 0%, rgba(104,52,196,1) 51%, rgba(80,52,180,1) 100%)", */
+                background:
+                  "linear-gradient(90deg, rgba(136,60,204,1) 0%, rgba(104,52,196,1) 0%, rgba(80,52,180,1) 100%)",
+              }}
+            >
               <Typography
                 variant="h3"
                 component="h2"
@@ -242,16 +258,21 @@ export default function MintBox() {
                 textAlign="center"
                 padding="1rem 0 .5rem 0"
                 fontFamily="'Chewy', cursive"
+                color="white"
               >
                 Playful Ponies
               </Typography>
-              <Typography textAlign="center" fontWeight="bold">
+              <Typography textAlign="center" fontWeight="bold" color="white">
                 Public Mint
               </Typography>
               <Box margin="0 3.5rem 0 3.5rem">
                 <LinearProgress tokenProgress={tokenProgress} />
               </Box>
-              <Typography textAlign="center" padding="0 0 .5rem 0">
+              <Typography
+                textAlign="center"
+                padding="0 0 .5rem 0"
+                color="white"
+              >
                 {contractInfo ? (
                   <Box component="span">
                     Available for mint:{" "}
@@ -272,17 +293,24 @@ export default function MintBox() {
                   <Box
                     display="flex"
                     justifyContent="center"
-                    margin=".5rem 0 0 0"
+                    margin={
+                      matches ? "1rem 1rem 1rem 1rem" : "1rem 1rem 1rem 3.5rem"
+                    }
                   >
                     {showProgressCircle ? (
                       <CircularProgress />
                     ) : (
                       <Image
+                        src={ppGif}
+                        alt="playful pony"
+                        style={{ borderRadius: "8px" }}
+                      />
+                      /* <Image
                         src={rainbowPP}
                         alt="playful pony"
                         width="275px"
                         height="275px"
-                      />
+                      /> */
                     )}
                   </Box>
                 </Grid>
@@ -301,7 +329,11 @@ export default function MintBox() {
                       >
                         <Typography fontWeight="bold">—</Typography>
                       </Button>
-                      <Typography variant="h5" margin="0 1.5rem 0 1.5rem">
+                      <Typography
+                        variant="h5"
+                        margin="0 1.5rem 0 1.5rem"
+                        color="white"
+                      >
                         {amount}
                       </Typography>
                       <Button
@@ -316,6 +348,7 @@ export default function MintBox() {
                       margin="1rem 0 0 0"
                       fontSize="1rem"
                       variant="subtitle2"
+                      color="white"
                     >
                       Max mint amount: 1
                     </Typography>
@@ -326,6 +359,7 @@ export default function MintBox() {
                           textAlign="left"
                           margin=".75rem 0 .75rem .5rem"
                           component="span"
+                          color="white"
                         >
                           Cost:
                         </Typography>
@@ -334,6 +368,7 @@ export default function MintBox() {
                           margin=".75rem .5rem .75rem 0"
                           component="span"
                           fontWeight="bold"
+                          color="white"
                         >
                           {amount * 0.25} LUNA
                           <Box component="span" sx={{ fontSize: ".8rem" }}>
@@ -366,6 +401,7 @@ export default function MintBox() {
                       fontWeight="bold"
                       textAlign="center"
                       fontSize=".85rem"
+                      color="white"
                     >
                       Verified Contract Address
                     </Typography>

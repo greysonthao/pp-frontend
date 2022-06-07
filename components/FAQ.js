@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 
 export default function SimpleAccordion() {
   return (
-    <Box margin="0 0 6rem 0">
+    <Box margin="5rem 0 6rem 0">
       <Typography
         variant="h3"
         component="h4"
