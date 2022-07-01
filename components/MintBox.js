@@ -52,6 +52,7 @@ export default function MintBox() {
     if (connectedWallet && connectedWallet.network.name === "testnet") {
       const mintedTokens = await query.getNumTokens(connectedWallet);
       setTokensMinted(mintedTokens.count);
+      console.log("TOKENS MINTED: ", tokensMinted);
     }
   };
 
