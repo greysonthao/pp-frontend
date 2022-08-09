@@ -146,6 +146,8 @@ export default function MintBox() {
     }
   };
 
+  console.log("Contract Info: ", contractInfo);
+
   const submitMint = async () => {
     setShowProgressCircle(true);
 
