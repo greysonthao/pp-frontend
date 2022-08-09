@@ -52,7 +52,6 @@ export default function MintBox() {
     if (connectedWallet && connectedWallet.network.name === "testnet") {
       const mintedTokens = await query.getNumTokens(connectedWallet);
       setTokensMinted(mintedTokens.count);
-      console.log("TOKENS MINTED: ", tokensMinted);
     }
   };
 
@@ -145,8 +144,6 @@ export default function MintBox() {
       });
     }
   };
-
-  console.log("Contract Info: ", contractInfo);
 
   const submitMint = async () => {
     setShowProgressCircle(true);
